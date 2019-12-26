@@ -1,0 +1,9 @@
+live-server public
+
+//to run babel
+babel src/app.js --out-file=public/scripts/app.js --presets=env,react
+
+//to run babel cont.
+babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+ 
+babel es6/es7 extension to visual studio code
