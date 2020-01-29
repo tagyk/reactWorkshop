@@ -1,4 +1,4 @@
-console.log('Test running');
+console.log('Test is running');
 
 const user = {
     name:'Taygun',
