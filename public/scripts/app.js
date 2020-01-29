@@ -5,26 +5,79 @@ console.log('Test running');
 var user = {
     name: 'Taygun',
     surname: 'Karpuzoglu',
+    skills: ['.net', 'nodejs', 'mongoDB'],
     company: 'Jean Company' };
 //JSX - JavaScript XML
-/*
-var template = (
-    <div>
-        <h1>This JSX template Example</h1>
-        <p>information</p>
-        <ul>
-            <li>First</li>
-            <li>Second</li>
-        </ul>
-        <ul>
-            <li><b>Name:</b> {user.name}</li>
-            <li><b>Surname:</b> {user.surname}</li>
-            <li><b>Third Name</b></li>
-            <li>Fourth Name</li>
-        </ul>
-    </div>
+
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'This JSX template Example'
+    ),
+    React.createElement(
+        'p',
+        null,
+        'information'
+    ),
+    React.createElement(
+        'ul',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'First'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'Second'
+        )
+    ),
+    React.createElement(
+        'ul',
+        null,
+        React.createElement(
+            'li',
+            null,
+            React.createElement(
+                'b',
+                null,
+                'Name:'
+            ),
+            ' ',
+            user.name
+        ),
+        React.createElement(
+            'li',
+            null,
+            React.createElement(
+                'b',
+                null,
+                'Surname:'
+            ),
+            ' ',
+            user.surname
+        ),
+        React.createElement(
+            'li',
+            null,
+            React.createElement(
+                'b',
+                null,
+                'Third Name'
+            )
+        ),
+        React.createElement(
+            'li',
+            null,
+            'Fourth Name'
+        )
+    )
 );
-*/
+
 function getInfo(company) {
     if (company) return React.createElement(
         'li',
@@ -119,6 +172,34 @@ var conditionalTemplate = React.createElement(
                 'Gender:'
             ),
             'Male'
+        ),
+        React.createElement(
+            'li',
+            null,
+            user.skills.length > 0 ? "These are my skills" : "No skills"
+        ),
+        user.skills.length > 0 ? React.createElement(
+            'ol',
+            null,
+            React.createElement(
+                'li',
+                null,
+                'First skill'
+            ),
+            React.createElement(
+                'li',
+                null,
+                'Second skill'
+            ),
+            React.createElement(
+                'li',
+                null,
+                'Third skill'
+            )
+        ) : React.createElement(
+            'p',
+            null,
+            '-'
         ),
         getInfo(user.company)
     )

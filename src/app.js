@@ -1,12 +1,13 @@
 console.log('Test running');
 
-var user = {
+const user = {
     name:'Taygun',
     surname: 'Karpuzoglu',
+    skills: [ '.net', 'nodejs', 'mongoDB'],
     company: 'Jean Company'};
 //JSX - JavaScript XML
-/*
-var template = (
+
+const template = (
     <div>
         <h1>This JSX template Example</h1>
         <p>information</p>
@@ -22,7 +23,7 @@ var template = (
         </ul>
     </div>
 );
-*/
+
 function getInfo(company) {
     if(company)
         return <li><b>Company Name:</b> {company}</li>;
@@ -31,7 +32,7 @@ function getInfo(company) {
         
 }
 
-var conditionalTemplate = (
+const conditionalTemplate = (
     <div>
         <h1>JSX Template Example</h1>
         <h2>Information</h2>
@@ -46,11 +47,20 @@ var conditionalTemplate = (
             <li><b>Name:</b> {user.name}</li>
             <li><b>Surname:</b> {user.surname}</li>
             <li><b>Gender:</b>Male</li>
+            <li>{ user.skills.length > 0 ? "These are my skills" : "No skills" }</li>
+            { user.skills.length > 0 ?
+            <ol>
+                <li>First skill</li>
+                <li>Second skill</li>
+                <li>Third skill</li>
+            </ol>  :
+            <p>-</p>
+            }
             {getInfo(user.company)}
         </ul>
     </div>
 );
 
-var appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 
 ReactDOM.render(conditionalTemplate, appRoot);
