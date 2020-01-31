@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('Test running');
+console.log('Test is running');
 
 var user = {
     name: 'Taygun',
